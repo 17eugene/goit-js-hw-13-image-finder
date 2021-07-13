@@ -1,7 +1,7 @@
 import refs from "./refs";
 
 export default class LoadMore {
-    constructor({ selector, hidden = false, }) {
+    constructor({ selector }) {
         this.refs = this.getRefs(selector);
 
     }
