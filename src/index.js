@@ -11,6 +11,7 @@ const apiServise = new ApiServise();
 
 const loadMore = new LoadMore({ // Экземпляр класса кнопки загрузки
     selector: '[data-action="load-more"]',
+    hidden: true,
 });
 
 refs.searchForm.addEventListener('submit', onSearchForm);
@@ -24,6 +25,7 @@ function onSearchForm(e) {
         return alert('Некорректный ввод!');
     };
 
+    loadMore.show();
     clearGallery();
     apiServise.resetPage();
     fetchHits();

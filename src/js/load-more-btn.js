@@ -1,9 +1,10 @@
 import refs from "./refs";
 
 export default class LoadMore {
-    constructor({ selector }) {
+    constructor({ selector, hidden = false }) {
         this.refs = this.getRefs(selector);
 
+        hidden && this.hide();
     }
 
     getRefs(selector) {
@@ -21,6 +22,14 @@ export default class LoadMore {
 
     disable() {
         this.refs.button.disabled = true;
-        this.refs.label.textContent = 'Loading...'
+        this.refs.label.textContent = 'Loading...';
+    }
+
+    hide() {
+        this.refs.button.classList.add('is-hidden');
+    }
+
+    show() {
+        this.refs.button.classList.remove('is-hidden');
     }
 }
