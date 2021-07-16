@@ -29,6 +29,7 @@ function onSearchForm(e) {
     clearGallery();
     apiServise.resetPage();
     fetchHits();
+    clearInput(e);
 };
 
 function onLoadBtn() {
@@ -52,10 +53,13 @@ function renderMarkup(hits) {
     refs.gallery.insertAdjacentHTML('beforeend', picsCardsTpl(hits));
 };
 
+function clearInput(e) {
+    e.currentTarget.elements.query.value = '';
+};
+
 function clearGallery() {
     refs.gallery.innerHTML = '';
 };
-
 
 function scrollToRenderedMarkup() {
     setTimeout(() => {

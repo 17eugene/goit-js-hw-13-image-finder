@@ -32,4 +32,8 @@ export default class ApiServise {
     set query(newQuery) {
         this.searchQuery = newQuery;
     };
+
+    clearInput() {
+        this.searchQuery.innerHTML = '';
+    };
 }
